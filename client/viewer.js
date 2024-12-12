@@ -1,4 +1,7 @@
-let scene, camera, renderer, mesh;
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+let scene, camera, renderer, mesh, controls;
 
 function initViewer(container) {
     scene = new THREE.Scene();
@@ -8,7 +11,7 @@ function initViewer(container) {
     renderer.setSize(container.clientWidth, container.clientHeight);
     camera.position.z = 5;
 
-    controls = new THREE.OrbitControls( camera, renderer.domElement );
+    controls = new OrbitControls( camera, renderer.domElement );
 }
 
 function render() {
@@ -32,3 +35,5 @@ function updateMesh(meshDescription){
         console.log("mesh generation failed")
     }
 }
+
+export {initViewer, render, updateMesh}

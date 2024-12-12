@@ -1,26 +1,26 @@
-      
+                
 <!DOCTYPE html>
 <html>
 <head>
     <title>Code-Driven CAD</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/node_modules/codemirror/lib/codemirror.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://threejs.org/build/three.module.js",
+                "three/addons/": "https://threejs.org/examples/jsm/"
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <div class="editor-container">
-            <textarea id="editor"></textarea>
-        </div>
         <div class="viewer-container">
             <canvas id="scene-canvas"></canvas>
         </div>
     </div>
-    <script src="/node_modules/codemirror/lib/codemirror.js"></script>
-    <script src="/node_modules/codemirror/mode/javascript/javascript.js"></script>
-    <script src="/node_modules/three/build/three.js"></script>
-    <script src="editor.js"></script>
-    <script src="viewer.js"></script>
-    <script src="live.js"></script>
+    <script type="module" src="viewer.js"></script>
+    <script type="module" src="live.js"></script>
 </body>
 </html>
 
